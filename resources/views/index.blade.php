@@ -6,11 +6,11 @@
     <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <div class="carousel-item active">
-        <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">
+        <img src="assets/img/Slider1.png" alt="">
         <div class="carousel-container">
-          <h2>Selamat Datang di Program Studi <span>Teknologi Rekayasa Perangkat Lunak</span></h2>
+          {{-- <h2>Selamat Datang di Program Studi <span>Teknologi Rekayasa Perangkat Lunak</span></h2> --}}
           {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> --}}
-          <a href="about.html" class="btn-get-started">Mulai</a>
+          {{-- <a href="about.html" class="btn-get-started">Mulai</a> --}}
         </div>
       </div><!-- End Carousel Item -->
 
@@ -83,7 +83,7 @@
 
       <div class="row gy-4">
         <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          <img src="assets/img/aaron-ikbaar.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 order-2 order-lg-1 content">
           <div class="container section-title" data-aos="fade-up">
@@ -96,7 +96,7 @@
           </p> --}}
           <ul>
             @foreach ($alasan as $item)
-            <li><i class="bi bi-check2-all"></i> <span>{{ $item->name }}</span></li>
+            <li><i class="bi bi-check2-circle"></i><span>{{ $item->name }}</span></li>
 
             @endforeach
 
@@ -156,7 +156,7 @@
           </div>
         </div><!-- End Service Item -->
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
           <div class="service-item position-relative">
             <div class="icon">
               <i class="bi bi-bounding-box-circles"></i>
@@ -197,17 +197,17 @@
 
       </div>
 
-    </div>
+    </div> --}}
 
   </section><!-- /Services Section -->
 
-  {{-- <!-- Clients Section -->
+  {{-- {{-- <!-- Clients Section --> --}}
   <section id="clients" class="section clients">
 
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
-      <h2>Clients</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas</p>
+      <h2>Partnership</h2>
+      {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas</p> --}}
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -247,19 +247,19 @@
           }
         </script>
         <div class="swiper-wrapper align-items-center">
-          <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-          <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/Huawei-Logo.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/Oracle-Logo.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/dicoding-logo-square.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/Kemkominfo-Logo.png" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/GreenNusa-Logo.jpg" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/Britech-Logo.png" class="img-fluid" alt=""></div>
+          {{-- <div class="swiper-slide"><img src="assets/img/" class="img-fluid" alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/" class="img-fluid" alt=""></div> --}}
         </div>
         <div class="swiper-pagination"></div>
       </div>
 
     </div>
 
-  </section><!-- /Clients Section --> --}}
+  </section><!-- /Clients Section --> --
   @endsection
