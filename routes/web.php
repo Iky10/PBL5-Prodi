@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlasanController;
 
@@ -20,3 +21,11 @@ Route::post('/alasan/create', [AlasanController::class, 'store'])->name('alasan.
 Route::get('/alasan/edit/{id}', [AlasanController::class, 'edit'])->name('alasan.edit');
 Route::put('/alasan/update/{id}', [AlasanController::class, 'update'])->name('alasan.update');
 Route::delete('/alasan/delete/{id}', [AlasanController::class, 'destroy'])->name('alasan.delete');
+=======
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/index',[IndexController::class, 'index']);
+>>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
