@@ -1,3 +1,4 @@
+<script src="{{asset ('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('asset_dashboard/js/app.js') }}"></script>
 <script src="{{ asset('asset_dashboard/js/custom.js') }}"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

@@ -22,6 +22,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 @stack('css')
 
+<link href="{{asset ('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{asset ('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+
 {{-- <!-- Scripts -->
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 

@@ -3,15 +3,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h4>Alasan</h4>
-                    <a href="{{ route('alasan.create') }}" class="btn btn-primary float-end">Tambah</a>
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h3>Alasan</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
+                        <a href="{{ route('alasan.create') }}" class="btn btn-primary float-end">Tambah</a>
                         <table class="table table-striped">
                             <thead>
-                                <tr></tr>
+                                <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Alasan</th>
                                     <th scope="col">Action</th>

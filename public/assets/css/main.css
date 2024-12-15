@@ -22,13 +22,8 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #545454; /* Color for headings, subheadings and title throughout the website */
-<<<<<<< HEAD
   --accent-color: #4682B4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #f5f5dc; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-=======
-  --accent-color: #3973A6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
@@ -37,25 +32,15 @@
   --nav-color: #444444;  /* The default color of the main navmenu links */
   --nav-hover-color: #3973A6; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-<<<<<<< HEAD
   --nav-dropdown-background-color: #f5f5dc; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #4682B4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-=======
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #3973A6; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-<<<<<<< HEAD
   --background-color: #ffffff;
-=======
-  --background-color: #f9f9f9;
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
   --surface-color: #ffffff;
 }
 
@@ -79,6 +64,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -538,10 +524,7 @@ h6 {
 
 .footer .footer-top {
   padding-top: 50px;
-<<<<<<< HEAD
   margin-right: -120px;
-=======
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
 }
 
 .footer .social-links a {
@@ -846,11 +829,7 @@ section,
 
 .hero .carousel-item:before {
   content: "";
-<<<<<<< HEAD
   background: color-mix(in srgb, var(--background-color), transparent 60%);
-=======
-  background: color-mix(in srgb, var(--background-color), transparent 20%);
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -858,11 +837,7 @@ section,
 
 .hero .carousel-item::before {
   content: "";
-<<<<<<< HEAD
   background-color: color-mix(in srgb, var(--background-color), transparent 60%);
-=======
-  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
->>>>>>> 419ecd480b7780f79e879656282cabb7ae4ca38c
   position: absolute;
   inset: 0;
 }
@@ -1126,11 +1101,23 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+/* CUSTOM CSS SERVICES */
+#services .service-item .img-container {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+#services .service-item .img-container img {
+  width: 100%;
+}
+/* CUSTOM CSS SERVICES END */
+
 .services .service-item {
   background-color: var(--surface-color);
   text-align: center;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  padding: 80px 20px;
+  padding: 20px;
   transition: all ease-in-out 0.3s;
   height: 100%;
 }
@@ -1554,7 +1541,8 @@ section,
   margin-top: 10px;
 }
 
-.portfolio-details .portfolio-description {
+.portfolio-details .portfolio-de
+iption {
   padding-top: 30px;
 }
 

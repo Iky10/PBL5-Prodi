@@ -13,5 +13,8 @@
     <a class="sidebar-link" href="{{ route('alasan.index') }}">
         <i class="align-middle" data-feather="papers"></i> <span class="align-middle">Alasan</span>
     </a>
+    <a class="sidebar-link" href="{{ route('admin.alasan_banner.index') }}">
+        <i class="align-middle" data-feather="papers"></i> <span class="align-middle">Banner</span>
+    </a>
 </li>
 
