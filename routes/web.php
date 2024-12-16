@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\Admin\AlasanBannerController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlasanController;
+use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\AlasanBannerController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,3 +25,6 @@ Route::delete('/alasan/delete/{id}', [AlasanController::class, 'destroy'])->name
 
 Route::get('/admin/alasan_banner', [AlasanBannerController::class, 'index'])->name('admin.alasan_banner.index');
 Route::put('/admin/alasan_banner/update/{id}', [AlasanBannerController::class, 'update'])->name('admin.alasan_banner.update');
+Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
+Route::post('/admin/berita/store', [BeritaController::class, 'store'])->name('admin.berita.store');
+Route::put('/admin/berita/update/{id}', [BeritaController::class, 'update'])->name('admin.berita.update');

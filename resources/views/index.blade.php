@@ -85,7 +85,7 @@
         @foreach ($alasanBanner as $item)
           <div class="col-lg-6 order-1 order-lg-2">
             <a href="#">
-              <img src="{{ Storage::url($item->image) }}" class="img-fluid" alt="">
+              <img src="{{ Storage::url($item->image) }}" class="img-fluid" alt="{{ $item->name }}">
             </a>
           </div>
         @endforeach
@@ -119,24 +119,33 @@
   <!-- Services Section -->
   <section id="services" class="services section">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Pengumuman</h2>
+      <h2>Berita Utama</h2>
     <div class="container">
-
       <div class="row gy-4">
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <a href="" class="position-relative text-decoration-none text-black">  
+        
+        @if ($beritas->isNotEmpty())
+          @foreach ($beritas as $berita)
+              <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
+                  <a href="#" class="position-relative text-decoration-none text-black">  
+                      <div class="service-item position-relative text-decoration-none">
+                          <div class="img-container mb-3">
+                              <img src="{{ Storage::url($berita->image) }}" alt="">
+                          </div>
+                          <h3 class="title lh-sm mb-3 m-0 p-0">{{ $berita->description }}</h3>
+                          <p class="date lh-sm m-0 p-0">{{ $berita->formatted_date }}</p>
+                      </div>
+                  </a>
+              </div><!-- End Service Item -->
+          @endforeach
+        @else
+          <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
             <div class="service-item position-relative text-decoration-none">
-              <div class="img-container mb-3">
-                <img src="{{ asset('assets/img/blog/blog-1.jpg') }}" alt="">
-              </div>
-              <h3 class="title lh-sm mb-3 m-0 p-0">Nesciunt Mete</h3>
-              <p class="date lh-sm m-0 p-0">14 Dec 2024</p>
+              <p class="text-center">Belum ada berita yang tersedia.</p>
             </div>
-          </a>
-        </div><!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          </div>
+        @endif
+    
+        {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
           <div class="service-item position-relative">
             <div class="icon">
               <i class="bi bi-broadcast"></i>
@@ -160,7 +169,7 @@
           </div>
         </div><!-- End Service Item -->
 
-        {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
           <div class="service-item position-relative">
             <div class="icon">
               <i class="bi bi-bounding-box-circles"></i>
@@ -197,12 +206,10 @@
             <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
             <a href="#" class="stretched-link"></a>
           </div>
-        </div><!-- End Service Item -->
+        </div><!-- End Service Item --> --}}
 
       </div>
-
-    </div> --}}
-
+    </div>
   </section><!-- /Services Section -->
 
   {{-- {{-- <!-- Clients Section --> --}}
