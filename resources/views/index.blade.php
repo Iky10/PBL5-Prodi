@@ -120,6 +120,7 @@
   <section id="services" class="services section">
     <div class="container section-title" data-aos="fade-up">
       <h2>Berita Utama</h2>
+    </div>
     <div class="container">
       <div class="row gy-4">
         

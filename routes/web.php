@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\OutputLulusanController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AlasanController;
-use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\AdminBeritaController;
 use App\Http\Controllers\Admin\AlasanBannerController;
+use App\Http\Controllers\Admin\AdminOutputLulusanController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -13,6 +15,7 @@ use App\Http\Controllers\Admin\AlasanBannerController;
 
 Route::get('/',[IndexController::class, 'index']);
 
+Route::get('/output_lulusan',[OutputLulusanController::class, 'index'])->name('output_lulusan.index');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
@@ -25,6 +28,13 @@ Route::delete('/alasan/delete/{id}', [AlasanController::class, 'destroy'])->name
 
 Route::get('/admin/alasan_banner', [AlasanBannerController::class, 'index'])->name('admin.alasan_banner.index');
 Route::put('/admin/alasan_banner/update/{id}', [AlasanBannerController::class, 'update'])->name('admin.alasan_banner.update');
-Route::get('/admin/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
-Route::post('/admin/berita/store', [BeritaController::class, 'store'])->name('admin.berita.store');
-Route::put('/admin/berita/update/{id}', [BeritaController::class, 'update'])->name('admin.berita.update');
+
+Route::get('/admin/berita', [AdminBeritaController::class, 'index'])->name('admin.berita.index');
+Route::post('/admin/berita/store', [AdminBeritaController::class, 'store'])->name('admin.berita.store');
+Route::put('/admin/berita/update/{id}', [AdminBeritaController::class, 'update'])->name('admin.berita.update');
+Route::delete('/admin/berita/delete/{id}', [AdminBeritaController::class, 'delete'])->name('admin.berita.delete');
+
+Route::get('/admin/output_lulusan', [AdminOutputLulusanController::class, 'index'])->name('admin.output_lulusan.index');
+Route::post('/admin/output_lulusan/store', [AdminOutputLulusanController::class, 'store'])->name('admin.output_lulusan.store');
+Route::put('/admin/output_lulusan/update/{id}', [AdminOutputLulusanController::class, 'update'])->name('admin.output_lulusan.update');
+Route::delete('/admin/output_lulusan/delete/{id}', [AdminOutputLulusanController::class, 'delete'])->name('admin.output_lulusan.delete');

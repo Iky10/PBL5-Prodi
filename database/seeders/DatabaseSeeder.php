@@ -5,7 +5,8 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\AlasanImgSeeder;
+use Database\Seeders\AlasanBannerSeeder;
+use Database\Seeders\OutputLulusanSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(AlasanImgSeeder::class);
+        $this->call(AlasanBannerSeeder::class);
+        // $this->call(OutputLulusanSeeder::class);
     }
 }

@@ -42,13 +42,13 @@
                                         </td>
                                         <td>
                                             <!-- EDIT ALASAN IMG BUTTON TRIGGER MODAL -->
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alasan-banner-{{ $item->id }}">
+                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#alasan-banner-{{ $item->id }}">
                                                 Ubah
                                             </button>
                                             <!-- EDIT ALASAN IMG MODAL -->
                                             <form action="{{ route('admin.alasan_banner.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
-                                                @method('PUT')
+                                                @method('put')
                                                 <div class="modal fade" id="alasan-banner-{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -73,6 +73,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                                                                 <button type="submit" class="btn btn-primary">Simpan</button>
                                                             </div>
                                                         </div>

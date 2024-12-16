@@ -1,4 +1,4 @@
-<header id="header" class="header sticky-top">
+<header id="header" class="header sticky-top" >
 
     <div class="topbar d-flex align-items-center dark-background">
       <div class="container d-flex justify-content-center justify-content-md-between">
@@ -45,6 +45,7 @@
             </li>
             <li class="dropdown"><a href="#"><span>Akademik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
+                <li><a href="{{ route('output_lulusan.index') }}">Output Lulusan</a></li>
                 <li><a href="#">Kalender Akademik</a></li>
                 <li><a href="#">Kurikulum</a></li>
                 <li><a href="#">Jadwal Kuliah</a></li>

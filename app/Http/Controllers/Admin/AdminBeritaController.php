@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class BeritaController extends Controller
+class AdminBeritaController extends Controller
 {
     public function index()
     {
@@ -26,7 +26,7 @@ class BeritaController extends Controller
     
             $imagePath = null;
             if ($request->hasFile('image')) {
-                $imagePath = $request->file('image')->store('images/berita', 'public');
+                $imagePath = $request->file('image')->store('images', 'public');
             }
     
             Berita::create([
@@ -37,7 +37,7 @@ class BeritaController extends Controller
     
             return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil ditambahkan.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.alasan_banner.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
+            return redirect()->route('admin.berita.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
 
@@ -69,7 +69,25 @@ class BeritaController extends Controller
     
             return redirect()->route('admin.berita.index')->with('success', 'Berita Berhasil Diubah!');
         } catch (\Exception $e) {
-            return redirect()->route('admin.alasan_banner.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
+            return redirect()->route('admin.berita.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
+
+    public function delete($id)
+    {
+        try {
+            $berita = Berita::findOrFail($id);
+
+            if ($berita->image && Storage::exists($berita->image)) {
+                Storage::delete($berita->image);
+            }
+
+            $berita->delete();
+
+            return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.berita.index')->with('failed', 'Terjadi kesalahan, data gagal dihapus!');
+        }
+    }
+
 }
