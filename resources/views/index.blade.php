@@ -84,7 +84,7 @@
       <div class="row gy-4">
         @foreach ($alasanBanner as $item)
           <div class="col-lg-6 order-1 order-lg-2">
-            <a href="#">
+            <a href="{{route('output_lulusan.index')}}">
               <img src="{{ Storage::url($item->image) }}" class="img-fluid" alt="{{ $item->name }}">
             </a>
           </div>
