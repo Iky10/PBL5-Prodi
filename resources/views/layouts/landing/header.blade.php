@@ -45,11 +45,11 @@
             </li>
             <li class="dropdown"><a href="#"><span>Akademik</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
-                <li><a href="{{ route('output_lulusan.index') }}">Output Lulusan</a></li>
                 <li><a href="#">Kalender Akademik</a></li>
                 <li><a href="#">Kurikulum</a></li>
                 <li><a href="#">Jadwal Kuliah</a></li>
                 <li><a href="#">Informasi Beasiswa</a></li>
+                <li><a href="{{ route('output_lulusan.index') }}">Output Lulusan</a></li>
               </ul>
               <li class="dropdown"><a href="#"><span>Prestasi</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
