@@ -15,9 +15,17 @@ class AlasanBannerController extends Controller
         return view('admin.alasan_banner.index', compact('alasanBanner'));   
     }
 
+
+    public function edit($id)
+    {
+        $alasanBanner = AlasanBanner::findOrFail($id);
+        return view('admin.alasan_banner.edit', compact('alasanBanner'));
+    }
+
+
     public function update(Request $request, $id)
     {
-        try {
+        try { 
             $request->validate([
                 'name' => 'required|string|max:255',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000'

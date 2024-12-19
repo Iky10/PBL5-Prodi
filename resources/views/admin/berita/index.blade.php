@@ -20,43 +20,8 @@
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h3>Berita</h3>
-                    <!-- CREATE BERITA BUTTON TRIGGER MODAL -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#berita-create">
-                        Tambah
-                    </button>
+                    <a href="{{ route('admin.berita.create') }}" class="btn btn-primary">Tambah</a>
                 </div>
-                <!-- CREATE BERITA MODAL -->
-                <form action="{{ route('admin.berita.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal fade" id="berita-create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Berita</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label for="image" class="form-label">Gambar</label>
-                                        <input type="file" class="form-control" id="image" name="image">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="description" class="form-label">Deskripsi</label>
-                                        <input type="text" class="form-control" id="description" name="description" placeholder="Masukkan Deskripsi">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="date">Tanggal</label>
-                                        <input type="date" id="date" name="date" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-striped">
@@ -76,58 +41,15 @@
                                         <td>
                                             <img src="{{ Storage::url($berita->image) }}" alt="Berita Image" width="50">
                                         </td>
-                                        <td>{{ $berita->description }}</td>
+                                        <td  class="text-truncate text-nowrap w-25" style="max-width: 250px;">{{ $berita->description }}</td>
                                         <td>{{ $berita->formatted_date }}</td>
                                         <td class="d-flex gap-1">
-                                            <!-- EDIT BERITA BUTTON TRIGGER MODAL -->
-                                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#berita-edit-{{ $berita->id }}">
-                                                Ubah
-                                            </button>
-                                            <!-- EDIT BERITA MODAL -->
-                                            <form action="{{ route('admin.berita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
-                                                @csrf
-                                                @method('put')
-                                                <div class="modal fade" id="berita-edit-{{ $berita->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="exampleModalLabel">Ubah Berita</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <div class="mb-3">
-                                                                    <label for="image" class="form-label">Gambar</label>
-                                                                    <input type="file" class="form-control" id="image" name="image">
-                                                                    @if($berita->image)
-                                                                        <div class="mt-2">
-                                                                            <label for="current-image-path" class="form-label">Path Gambar Saat Ini:</label>
-                                                                            <input type="text" class="form-control" id="current-image-path" value="{{ Storage::url($berita->image) }}" readonly>
-                                                                        </div>
-                                                                    @endif
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="description" class="form-label">Deskripsi</label>
-                                                                    <input type="text" class="form-control" id="description" name="description" placeholder="Masukkan Deskripsi" value="{{ old('description', $berita->description) }}">
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <label for="date">Tanggal</label>
-                                                                    <input type="date" id="date" name="date" class="form-control"  value="{{ old('date', $berita->date) }}">
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                                <button type="submit" class="btn btn-primary">Simpan</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-
-                                            <!-- DELETE OUTPUT LULUSAN BUTTON TRIGGER MODAL -->
+                                            <a href="{{ route('admin.berita.edit', $berita->id) }}" class="btn btn-warning">Ubah</a>
+                                            <!-- DELETE BERITA BUTTON TRIGGER MODAL -->
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#berita-delete-{{ $berita->id }}">
                                                 Hapus
                                             </button>
-                                            <!-- DELETE OUTPUT LULUSAN MODAL -->
+                                            <!-- DELETE BERITA MODAL -->
                                             <form action="{{ route('admin.berita.delete', $berita->id) }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('delete')

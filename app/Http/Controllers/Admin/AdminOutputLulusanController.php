@@ -15,6 +15,11 @@ class AdminOutputLulusanController extends Controller
         return view('admin.output_lulusan.index', compact('outputLulusans'));
     }
 
+    public function create()
+    {
+        return view('admin.output_lulusan.create');   
+    }
+
     public function store(Request $request) 
     {
         try {
@@ -41,6 +46,12 @@ class AdminOutputLulusanController extends Controller
         }
     }
 
+    public function edit($id)
+    {
+        $outputLulusan = OutputLulusan::findOrFail($id);
+        return view('admin.output_lulusan.edit', compact('outputLulusan'));
+    }
+
     public function update(Request $request, $id)
     {
         try {
@@ -50,22 +61,22 @@ class AdminOutputLulusanController extends Controller
                 'description' => 'required|string|max:255',
             ]);
     
-            $outputLulusans = OutputLulusan::findOrFail($id);
+            $outputLulusan = OutputLulusan::findOrFail($id);
     
             
             if ($request->hasFile('image')) {
-                if ($outputLulusans->image && Storage::exists($outputLulusans->image)) {
-                    Storage::delete($outputLulusans->image);
+                if ($outputLulusan->image && Storage::exists($outputLulusan->image)) {
+                    Storage::delete($outputLulusan->image);
                 }
                 
                 $path = $request->file('image')->store('images', 'public');
-                $outputLulusans->image = $path;
+                $outputLulusan->image = $path;
             }
     
-            $outputLulusans->title = $request->title;
-            $outputLulusans->description = $request->description;
+            $outputLulusan->title = $request->title;
+            $outputLulusan->description = $request->description;
             
-            $outputLulusans->save();
+            $outputLulusan->save();
     
             return redirect()->route('admin.output_lulusan.index')->with('success', 'Output Lulusan Berhasil Diubah!');
         } catch (\Exception $e) {

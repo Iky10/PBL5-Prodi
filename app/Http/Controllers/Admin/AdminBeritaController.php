@@ -15,6 +15,11 @@ class AdminBeritaController extends Controller
         return view('admin.berita.index', compact('beritas'));   
     }
 
+    public function create()
+    {
+        return view('admin.berita.create');   
+    }
+
     public function store(Request $request) 
     {
         try {
@@ -39,6 +44,12 @@ class AdminBeritaController extends Controller
         } catch (\Exception $e) {
             return redirect()->route('admin.berita.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
+    }
+
+    public function edit($id)
+    {
+        $berita = Berita::findOrFail($id);
+        return view('admin.berita.edit', compact('berita'));
     }
 
     public function update(Request $request, $id)

@@ -132,7 +132,7 @@
                           <div class="img-container mb-3">
                               <img src="{{ Storage::url($berita->image) }}" alt="">
                           </div>
-                          <h3 class="title lh-sm mb-3 m-0 p-0">{{ $berita->description }}</h3>
+                          <p class="description lh-sm mb-3 m-0 p-0 " >{{ $berita->description }}</p>
                           <p class="date lh-sm m-0 p-0">{{ $berita->formatted_date }}</p>
                       </div>
                   </a>
