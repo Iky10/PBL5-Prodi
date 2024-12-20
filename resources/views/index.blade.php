@@ -50,7 +50,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
             <h4><a href="" class="stretched-link">Akreditasi</a></h4>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <p>Akreditasi Program Studi Teknologi Rekayasa Perangkat Lunak</p>
           </div>
         </div><!-- End Featured Item -->
 
@@ -58,7 +58,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
             <h4><a href="" class="stretched-link">Jadwal Kuliah</a></h4>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <p>Jadwal Perkuliahan Teknologi Rekayasa Perangkat Lunak</p>
           </div>
         </div><!-- End Featured Item -->
 
@@ -66,7 +66,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-broadcast icon"></i></div>
             <h4><a href="" class="stretched-link">Informasi Beasiswa</a></h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <p>Informasi Beasiswa Tahun Ajaran 2025/2026</p>
           </div>
         </div><!-- End Featured Item -->
 

@@ -525,8 +525,12 @@ h6 {
 
 .footer .footer-top {
   padding-top: 50px;
+<<<<<<< Updated upstream
   width: 100%;
   margin-right: -125px;
+=======
+  margin-right: -120px;
+>>>>>>> Stashed changes
 }
 
 .footer .social-links a {
