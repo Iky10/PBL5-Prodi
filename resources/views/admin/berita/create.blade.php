@@ -15,8 +15,14 @@
                                 <input type="file" class="form-control" id="image" name="image">
                             </div>
                             <div class="mb-3">
-                                <label for="description" class="form-label">Deskripsi</label>
-                                <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                                <label for="editor" class="form-label">Judul</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Masukkan Judul">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editor" class="form-label">Deskripsi</label>
+                                <div id="editor">
+                                </div>
+                                <input type="hidden" name="description" id="description">
                             </div>
                             <div class="mb-3">
                                 <label for="date">Tanggal</label>

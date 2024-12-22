@@ -42,7 +42,7 @@
                                             <img src="{{ Storage::url($item->image) }}" alt="Berita Image" width="50">
                                         </td>
                                         <td  class="text-truncate text-nowrap w-25" style="max-width: 250px;">{{ $item->title }}</td>
-                                        <td  class="text-truncate text-nowrap w-25" style="max-width: 250px;">{{ $item->description }}</td>
+                                        <td class="text-truncate text-nowrap w-25" style="max-width: 250px;">{!! $item->description !!}</td>
                                         <td class="d-flex gap-1">
                                             <a href="{{ route('admin.output_lulusan.edit', $item->id) }}" class="btn btn-warning">Ubah</a>
                                             <!-- DELETE OUTPUT LULUSAN BUTTON TRIGGER MODAL -->

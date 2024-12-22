@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\AdminOutputLulusanController;
 // });
 
 Route::get('/',[IndexController::class, 'index']);
+Route::get('/berita/{id}', [IndexController::class, 'beritaDetail'])->name('beritaDetail');
+Route::get('/berita_lainnya', [IndexController::class, 'beritaLainnya'])->name('beritaLainnya');
 
 Route::get('/output_lulusan',[OutputLulusanController::class, 'index'])->name('output_lulusan.index');
 

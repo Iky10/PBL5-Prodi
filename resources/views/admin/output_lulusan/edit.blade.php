@@ -25,8 +25,11 @@
                             <input type="text" class="form-control" id="title" name="title" placeholder="Masukkan Judul" value="{{ old('title', $outputLulusan->title) }}">
                         </div>
                         <div class="mb-3">
-                            <label for="description" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" name="description" id="description" rows="3">{{ old('description', $outputLulusan->description) }}</textarea>
+                            <label for="editor" class="form-label">Deskripsi</label>
+                            <div id="editor">
+                                {!! old('description', $outputLulusan->description) !!}
+                            </div>
+                            <input type="hidden" name="description" id="description">
                         </div>
                         <a href="{{ url()->previous() }}" class="btn btn-secondary">Batal</a>
                         <button type="submit" class="btn btn-primary">Ubah</button>

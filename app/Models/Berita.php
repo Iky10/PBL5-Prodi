@@ -12,12 +12,18 @@ class Berita extends Model
     protected $table = 'berita';
     protected $fillable = [
         'image',
+        'title',
         'description',
         'date'
     ];
 
-    public function getFormattedDateAttribute()
-    {
-        return Carbon::parse($this->date)->format('d M Y');
-    }
+    public function getFormattedDateDMYAttribute()
+{
+    return Carbon::parse($this->date)->format('d M Y');  // Format '18 Dec 2024'
+}
+
+public function getFormattedDateDFYAttribute()
+{
+    return Carbon::parse($this->date)->format('d F Y');  // Format '18 December 2024'
+}
 }

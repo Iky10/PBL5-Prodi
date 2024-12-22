@@ -116,8 +116,8 @@
 
   </section><!-- /About Section -->
 
-  <!-- Services Section -->
-  <section id="services" class="services section">
+  <!-- Berita Section -->
+  <section id="berita" class=" berita-section services section">
     <div class="container section-title" data-aos="fade-up">
       <h2>Berita Utama</h2>
     </div>
@@ -127,13 +127,15 @@
         @if ($beritas->isNotEmpty())
           @foreach ($beritas as $berita)
               <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
-                  <a href="#" class="position-relative text-decoration-none text-black">  
+                  <a href="{{ route('beritaDetail', $berita->id) }}" class="position-relative text-decoration-none text-black">  
                       <div class="service-item position-relative text-decoration-none">
                           <div class="img-container mb-3">
                               <img src="{{ Storage::url($berita->image) }}" alt="">
                           </div>
-                          <p class="description lh-sm mb-3 m-0 p-0 " >{{ $berita->description }}</p>
-                          <p class="date lh-sm m-0 p-0">{{ $berita->formatted_date }}</p>
+                          {{-- <p class="description m-0 p-0">{{ $berita->title }}</p>
+                          <p class="date lh-sm mt-3 m-0 p-0">{{ $berita->formatted_date }}</p> --}}
+                          <h5 class="title fw-bold lh-sm mb-2 m-0 p-0">{{ $berita->title }}</h5>
+                          <p class="description m-0 p-0">{{ \Illuminate\Support\Str::limit(strip_tags($berita->description), 200) }}</p>
                       </div>
                   </a>
               </div><!-- End Service Item -->
@@ -145,7 +147,16 @@
             </div>
           </div>
         @endif
-    
+      </div>
+    </div>
+    <div class="d-flex justify-content-center w-100 mt-5">
+      <a href="{{ route('beritaLainnya') }}" class="text-center">
+        Berita Lainnya
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </section><!-- /Berita Section -->
+
         {{-- <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
           <div class="service-item position-relative">
             <div class="icon">
@@ -208,10 +219,6 @@
             <a href="#" class="stretched-link"></a>
           </div>
         </div><!-- End Service Item --> --}}
-
-      </div>
-    </div>
-  </section><!-- /Services Section -->
 
   {{-- {{-- <!-- Clients Section --> --}}
   <section id="clients" class="section clients">

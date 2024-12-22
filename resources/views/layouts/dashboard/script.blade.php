@@ -42,4 +42,29 @@
     })
 </script>
 
+<!-- Include the Quill library -->
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+    const quill = new Quill('#editor', {
+        modules: {
+            toolbar: [
+                [{ header: [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                [{ list: 'ordered' }],
+            ],
+        },
+        placeholder: 'Masukkan Deskripsi',
+        theme: 'snow',
+    });
+
+    const form = document.querySelector('form');
+    form.onsubmit = function () {
+        const description = document.querySelector('input[name="description"]');
+        description.value = quill.root.innerHTML; 
+    };
+</script>
+
+
 @stack('js')

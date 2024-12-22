@@ -34,10 +34,12 @@ class AdminOutputLulusanController extends Controller
                 $imagePath = $request->file('image')->store('images', 'public');
             }
     
+            $allowedTags = '<p><a><b><strong><i><u><em><br><ol><li>';
+
             OutputLulusan::create([
                 'image' => $imagePath,
                 'title' => $request->title,
-                'description' => $request->description,
+                'description' => strip_tags($request->description, $allowedTags),
             ]);
     
             return redirect()->route('admin.output_lulusan.index')->with('success', 'Berita berhasil ditambahkan.');
@@ -74,7 +76,8 @@ class AdminOutputLulusanController extends Controller
             }
     
             $outputLulusan->title = $request->title;
-            $outputLulusan->description = $request->description;
+            $allowedTags = '<p><a><b><strong><i><u><em><br><ol><li>';
+            $outputLulusan->description = strip_tags($request->description, $allowedTags);
             
             $outputLulusan->save();
     

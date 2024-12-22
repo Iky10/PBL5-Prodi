@@ -14,7 +14,7 @@ class AdminBeritaController extends Controller
         $beritas = Berita::all();
         return view('admin.berita.index', compact('beritas'));   
     }
-
+    
     public function create()
     {
         return view('admin.berita.create');   
@@ -25,7 +25,8 @@ class AdminBeritaController extends Controller
         try {
             $request->validate([
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
-                'description' => 'required|string|max:255',
+                'title' => 'required|string|max:255',
+                'description' => 'required|string|max:10000000',
                 'date' => 'required|date',
             ]);
     
@@ -34,9 +35,12 @@ class AdminBeritaController extends Controller
                 $imagePath = $request->file('image')->store('images', 'public');
             }
     
+            $allowedTags = '<p><a><b><strong><i><u><em><br><ol><ul><li>';
+
             Berita::create([
                 'image' => $imagePath,
-                'description' => $request->description,
+                'title' => $request->title,
+                'description' => strip_tags($request->description, $allowedTags),
                 'date' => $request->date,
             ]);
     
@@ -45,7 +49,7 @@ class AdminBeritaController extends Controller
             return redirect()->route('admin.berita.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
-
+    
     public function edit($id)
     {
         $berita = Berita::findOrFail($id);
@@ -57,7 +61,8 @@ class AdminBeritaController extends Controller
         try {
             $request->validate([
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
-                'description' => 'required|string|max:255',
+                'title' => 'required|string|max:255',
+                'description' => 'required|string|max:10000000',
                 'date' => 'required|date',
             ]);
     
@@ -73,7 +78,9 @@ class AdminBeritaController extends Controller
                 $berita->image = $path;
             }
     
-            $berita->description = $request->description;
+            $allowedTags = '<p><a><b><strong><i><u><em><br><ol><ul><li>';
+            $berita->title = $request->title;
+            $berita->description = strip_tags($request->description, $allowedTags);
             $berita->date = $request->date;
             
             $berita->save();
