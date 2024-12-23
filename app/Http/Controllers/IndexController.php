@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alasan;
 use App\Models\Berita;
 use App\Models\AlasanBanner;
+use App\Models\OutputLulusan;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -13,9 +14,11 @@ class IndexController extends Controller
     {
         $alasan = Alasan::all();
         $alasanBanner = AlasanBanner::all();
+        $outputLulusans = OutputLulusan::all();
         $beritas = Berita::orderBy('created_at', 'desc')->limit(3)->get();
-        return view('index', compact('alasan', 'alasanBanner', 'beritas'));
+        return view('index', compact('outputLulusans', 'alasan', 'alasanBanner', 'beritas'));
     }
+    
 
     public function beritaDetail($id)
     {
