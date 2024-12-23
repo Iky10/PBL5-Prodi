@@ -18,9 +18,9 @@
     <div class="branding">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="/" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/LogoTRPL.png" alt="">
+          <img src="assets/img/LogoTRPL.png" alt="/">
           <h1 class="sitename">TRPL<br></h1>
         </a>
 
@@ -57,7 +57,7 @@
                   <li><a href="#">-</a></li>
                   <li><a href="#">-</a></li>
                 </ul>
-            <li><a href="#">Berita</a></li>
+            <li><a href="{{ route('beritaLainnya') }}">Berita</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>

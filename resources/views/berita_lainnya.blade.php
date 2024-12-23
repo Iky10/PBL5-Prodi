@@ -3,7 +3,7 @@
 @section('content')
 <section id="berita-lainnya" class="berita-section services section m-0 pt-4">
     <div class="container section-title pb-5" data-aos="fade-up">
-        <h2 class="m-0">Berita Lainnya</h2>
+        <h2 class="m-0">Berita</h2>
     </div>
     <div class="container p-0 mt-0">
         <div class="row g-4 m-0 p-0">
