@@ -50,7 +50,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
             <h4><a href="" class="stretched-link">Akreditasi</a></h4>
-            <p>Akreditasi Program Studi Teknologi Rekayasa Perangkat Lunak</p>
+            <p>Pelajari lebih lanjut tentang pencapaian akreditasi Program Studi Teknologi Rekayasa Perangkat Lunak</p>
           </div>
         </div><!-- End Featured Item -->
 
@@ -58,7 +58,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-calendar4-week icon"></i></div>
             <h4><a href="" class="stretched-link">Jadwal Kuliah</a></h4>
-            <p>Jadwal Perkuliahan Teknologi Rekayasa Perangkat Lunak</p>
+            <p>Dapatkan informasi terkini tentang jadwal perkuliahan untuk menunjang aktivitas akademikmu</p>
           </div>
         </div><!-- End Featured Item -->
 
@@ -66,7 +66,7 @@
           <div class="featured-item position-relative">
             <div class="icon"><i class="bi bi-broadcast icon"></i></div>
             <h4><a href="" class="stretched-link">Informasi Beasiswa</a></h4>
-            <p>Informasi Beasiswa Tahun Ajaran 2025/2026</p>
+            <p>Temukan peluang beasiswa menarik untuk Tahun Ajaran 2025/2026 dan raih impianmu!</p>
           </div>
         </div><!-- End Featured Item -->
 
@@ -128,6 +128,7 @@
           </p> --}}
           <ul>
             @foreach ($alasan as $item)
+            <li></li>
             <li><i class="bi bi-check2-circle"></i><span>{{ $item->name }}</span></li>
             @endforeach
           </ul>
