@@ -7,7 +7,7 @@
                     <h4>Ubah Banner Alasan</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.alasan_banner.update', $alasanBanner->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.alasan-banner.update', $alasanBanner->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="mb-3">

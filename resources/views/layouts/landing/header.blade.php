@@ -14,16 +14,13 @@
         </div> --}}
       </div>
     </div><!-- End Top Bar -->
-
     <div class="branding">
-
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="/" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
-          <img src="assets/img/LogoTRPL.png" alt="/">
+          <img src="{{ asset('assets/img/LogoTRPL.png') }}" alt="/">
           <h1 class="sitename">TRPL<br></h1>
         </a>
-
         <nav id="navmenu" class="navmenu">
           <ul>
             <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -49,7 +46,7 @@
                 <li><a href="#">Kurikulum</a></li>
                 <li><a href="#">Jadwal Kuliah</a></li>
                 <li><a href="#">Informasi Beasiswa</a></li>
-                <li><a href="{{ route('output_lulusan.index') }}">Output Lulusan</a></li>
+                <li><a href="{{ route('output-lulusan.index') }}">Output Lulusan</a></li>
               </ul>
               <li class="dropdown"><a href="#"><span>Prestasi</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
@@ -57,7 +54,7 @@
                   <li><a href="#">-</a></li>
                   <li><a href="#">-</a></li>
                 </ul>
-            <li><a href="{{ route('beritaLainnya') }}">Berita</a></li>
+            <li><a href="{{ route('berita-lainnya') }}">Berita</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>

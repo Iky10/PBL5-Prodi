@@ -14,10 +14,11 @@ use App\Http\Controllers\Admin\AdminOutputLulusanController;
 // });
 
 Route::get('/',[IndexController::class, 'index']);
-Route::get('/berita/{id}', [IndexController::class, 'beritaDetail'])->name('beritaDetail');
-Route::get('c v', [IndexController::class, 'beritaLainnya'])->name('beritaLainnya');
+Route::get('/berita/{id}', [IndexController::class, 'beritaDetail'])->name('berita-detail');
+Route::get('/berita-lainnya', [IndexController::class, 'beritaLainnya'])->name('berita-lainnya');
 
-Route::get('/output_lulusan',[OutputLulusanController::class, 'index'])->name('output_lulusan.index');
+Route::get('/output-lulusan/{id}', [IndexController::class, 'outputLulusanDetail'])->name('output-lulusan-detail');
+Route::get('/output-lulusan',[OutputLulusanController::class, 'index'])->name('output-lulusan.index');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
@@ -28,9 +29,9 @@ Route::get('/alasan/edit/{id}', [AlasanController::class, 'edit'])->name('alasan
 Route::put('/alasan/update/{id}', [AlasanController::class, 'update'])->name('alasan.update');
 Route::delete('/alasan/delete/{id}', [AlasanController::class, 'destroy'])->name('alasan.delete');
 
-Route::get('/admin/alasan_banner', [AlasanBannerController::class, 'index'])->name('admin.alasan_banner.index');
-Route::get('/admin/alasan_banner/edit/{id}', [AlasanBannerController::class, 'edit'])->name('admin.alasan_banner.edit');
-Route::put('/admin/alasan_banner/update/{id}', [AlasanBannerController::class, 'update'])->name('admin.alasan_banner.update');
+Route::get('/admin/alasan-banner', [AlasanBannerController::class, 'index'])->name('admin.alasan-banner.index');
+Route::get('/admin/alasan-banner/edit/{id}', [AlasanBannerController::class, 'edit'])->name('admin.alasan-banner.edit');
+Route::put('/admin/alasan-banner/update/{id}', [AlasanBannerController::class, 'update'])->name('admin.alasan-banner.update');
 
 Route::get('/admin/berita', [AdminBeritaController::class, 'index'])->name('admin.berita.index');
 Route::get('/admin/berita/create', [AdminBeritaController::class, 'create'])->name('admin.berita.create');
@@ -39,9 +40,9 @@ Route::get('/admin/berita/edit/{id}', [AdminBeritaController::class, 'edit'])->n
 Route::put('/admin/berita/update/{id}', [AdminBeritaController::class, 'update'])->name('admin.berita.update');
 Route::delete('/admin/berita/delete/{id}', [AdminBeritaController::class, 'delete'])->name('admin.berita.delete');
 
-Route::get('/admin/output_lulusan', [AdminOutputLulusanController::class, 'index'])->name('admin.output_lulusan.index');
-Route::get('/admin/output_lulusan/create', [AdminOutputLulusanController::class, 'create'])->name('admin.output_lulusan.create');
-Route::post('/admin/output_lulusan/store', [AdminOutputLulusanController::class, 'store'])->name('admin.output_lulusan.store');
-Route::get('/admin/output_lulusan/edit/{id}', [AdminOutputLulusanController::class, 'edit'])->name('admin.output_lulusan.edit');
-Route::put('/admin/output_lulusan/update/{id}', [AdminOutputLulusanController::class, 'update'])->name('admin.output_lulusan.update');
-Route::delete('/admin/output_lulusan/delete/{id}', [AdminOutputLulusanController::class, 'delete'])->name('admin.output_lulusan.delete');
+Route::get('/admin/output-lulusan', [AdminOutputLulusanController::class, 'index'])->name('admin.output-lulusan.index');
+Route::get('/admin/output-lulusan/create', [AdminOutputLulusanController::class, 'create'])->name('admin.output-lulusan.create');
+Route::post('/admin/output-lulusan/store', [AdminOutputLulusanController::class, 'store'])->name('admin.output-lulusan.store');
+Route::get('/admin/output-lulusan/edit/{id}', [AdminOutputLulusanController::class, 'edit'])->name('admin.output-lulusan.edit');
+Route::put('/admin/output-lulusan/update/{id}', [AdminOutputLulusanController::class, 'update'])->name('admin.output-lulusan.update');
+Route::delete('/admin/output-lulusan/delete/{id}', [AdminOutputLulusanController::class, 'delete'])->name('admin.output-lulusan.delete');

@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <h3>Output Lulusan</h3>
-                    <a href="{{ route('admin.output_lulusan.create') }}" class="btn btn-primary">Tambah</a>
+                    <a href="{{ route('admin.output-lulusan.create') }}" class="btn btn-primary">Tambah</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -43,14 +43,14 @@
                                         </td>
                                         <td  class="text-truncate text-nowrap w-25" style="max-width: 250px;">{{ $item->title }}</td>
                                         <td class="text-truncate text-nowrap w-25" style="max-width: 250px;">{!! $item->description !!}</td>
-                                        <td class="d-flex gap-1">
-                                            <a href="{{ route('admin.output_lulusan.edit', $item->id) }}" class="btn btn-warning">Ubah</a>
+                                        <td>
+                                            <a href="{{ route('admin.output-lulusan.edit', $item->id) }}" class="btn btn-warning">Ubah</a>
                                             <!-- DELETE OUTPUT LULUSAN BUTTON TRIGGER MODAL -->
                                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#output-lulusan-delete-{{ $item->id }}">
                                                 Hapus
                                             </button>
                                             <!-- DELETE OUTPUT LULUSAN MODAL -->
-                                            <form action="{{ route('admin.output_lulusan.delete', $item->id) }}" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ route('admin.output-lulusan.delete', $item->id) }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 @method('delete')
                                                 <div class="modal fade" id="output-lulusan-delete-{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

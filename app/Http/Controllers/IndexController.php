@@ -25,10 +25,16 @@ class IndexController extends Controller
         $berita = Berita::findOrFail($id);
         return view('berita_detail', compact('berita'));
     }
-
+    
     public function beritaLainnya()
     {
         $beritas = Berita::all();
         return view('berita_lainnya', compact('beritas'));
+    }
+
+    public function outputLulusanDetail($id)
+    {
+        $outputLulusan = OutputLulusan::findOrFail($id);
+        return view('output_lulusan_detail', compact('outputLulusan'));
     }
 }

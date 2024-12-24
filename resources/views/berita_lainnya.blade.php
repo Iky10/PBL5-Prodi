@@ -11,7 +11,7 @@
             @foreach ($beritas as $berita)
                 <!-- Berita Item -->
                 <div class="col-lg-6 col-md-12 mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    <a href="{{ route('beritaDetail', $berita->id) }}" class="position-relative text-decoration-none text-black">  
+                    <a href="{{ route('berita-detail', $berita->id) }}" class="position-relative text-decoration-none text-black">  
                         <div class="service-item position-relative d-flex flex-row text-decoration-none gap-3">
                             <div class="row m-0 p-0">
                                 <div class="col-12 col-md-3 mb-3 mb-md-0 m-0 p-0">

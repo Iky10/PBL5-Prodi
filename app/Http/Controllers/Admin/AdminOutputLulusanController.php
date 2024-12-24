@@ -24,9 +24,9 @@ class AdminOutputLulusanController extends Controller
     {
         try {
             $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
                 'title' => 'required|string|max:255',
-                'description' => 'required|string|max:255',
+                'description' => 'required|string|max:10000000',
             ]);
     
             $imagePath = null;
@@ -42,9 +42,9 @@ class AdminOutputLulusanController extends Controller
                 'description' => strip_tags($request->description, $allowedTags),
             ]);
     
-            return redirect()->route('admin.output_lulusan.index')->with('success', 'Berita berhasil ditambahkan.');
+            return redirect()->route('admin.output-lulusan.index')->with('success', 'Berita berhasil ditambahkan.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.output_lulusan.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
+            return redirect()->route('admin.output-lulusan.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
 
@@ -58,9 +58,9 @@ class AdminOutputLulusanController extends Controller
     {
         try {
             $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
                 'title' => 'required|string|max:255',
-                'description' => 'required|string|max:255',
+                'description' => 'required|string|max:10000000',
             ]);
     
             $outputLulusan = OutputLulusan::findOrFail($id);
@@ -81,9 +81,9 @@ class AdminOutputLulusanController extends Controller
             
             $outputLulusan->save();
     
-            return redirect()->route('admin.output_lulusan.index')->with('success', 'Output Lulusan Berhasil Diubah!');
+            return redirect()->route('admin.output-lulusan.index')->with('success', 'Output Lulusan Berhasil Diubah!');
         } catch (\Exception $e) {
-            return redirect()->route('admin.output_lulusan.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
+            return redirect()->route('admin.output-lulusan.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
 
@@ -98,9 +98,9 @@ class AdminOutputLulusanController extends Controller
 
             $outputLulusan->delete();
 
-            return redirect()->route('admin.output_lulusan.index')->with('success', 'Output Lulusan berhasil dihapus.');
+            return redirect()->route('admin.output-lulusan.index')->with('success', 'Output Lulusan berhasil dihapus.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.output_lulusan.index')->with('failed', 'Terjadi kesalahan, data gagal dihapus!');
+            return redirect()->route('admin.output-lulusan.index')->with('failed', 'Terjadi kesalahan, data gagal dihapus!');
         }
     }
 

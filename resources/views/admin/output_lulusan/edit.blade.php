@@ -7,7 +7,7 @@
                     <h4>Ubah Output Lulusan</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.output_lulusan.update', $outputLulusan->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.output-lulusan.update', $outputLulusan->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('put')
                         <div class="mb-3">

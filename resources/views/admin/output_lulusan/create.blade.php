@@ -8,7 +8,7 @@
                     <h4>Tambah Output Lulusan</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.output_lulusan.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.output-lulusan.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="mb-3">

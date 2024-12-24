@@ -47,9 +47,9 @@ class AlasanBannerController extends Controller
             
             $alasanBanner->save();
     
-            return redirect()->route('admin.alasan_banner.index')->with('success', 'Banner Berhasil Diubah!');
+            return redirect()->route('admin.alasan-banner.index')->with('success', 'Banner Berhasil Diubah!');
         } catch (\Exception $e) {
-            return redirect()->route('admin.alasan_banner.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
+            return redirect()->route('admin.alasan-banner.index')->with('failed', 'Terjadi kesalahan, perubahan gagal!');
         }
     }
 }

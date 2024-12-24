@@ -24,7 +24,7 @@ class AdminBeritaController extends Controller
     {
         try {
             $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
                 'title' => 'required|string|max:255',
                 'description' => 'required|string|max:10000000',
                 'date' => 'required|date',
@@ -60,7 +60,7 @@ class AdminBeritaController extends Controller
     {
         try {
             $request->validate([
-                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5000',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
                 'title' => 'required|string|max:255',
                 'description' => 'required|string|max:10000000',
                 'date' => 'required|date',

@@ -41,7 +41,7 @@
                                             <img src="{{ Storage::url($item->image) }}" alt="{{ $item->name }}" width="50">
                                         </td>
                                         <td> 
-                                            <a href="{{ route('admin.alasan_banner.edit', $item->id) }}" class="btn btn-warning">Ubah</a>
+                                            <a href="{{ route('admin.alasan-banner.edit', $item->id) }}" class="btn btn-warning">Ubah</a>
                                         </td>
                                     </tr>
                                 @endforeach

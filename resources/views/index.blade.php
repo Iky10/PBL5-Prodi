@@ -78,19 +78,46 @@
 
   <!-- About Section -->
   <section id="about" class="section about">
-
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-      <div class="row gy-4">
-        @foreach ($outputLulusans as $item)
+      <div class="row gy-4 gx-5">
+        {{-- @foreach ($outputLulusans as $item)
           <div class="col-lg-6 order-1 order-lg-2">
-            {{-- <a href="{{route('output_lulusan.index')}}">
+            <a href="{{route('output_lulusan.index')}}">
               <img src="{{ Storage::url($item->image) }}" class="img-fluid" alt="{{ $item->name }}">
-            </a> --}}
+            </a>
             {{ $item->title }}
           </div>
-        @endforeach
-        <div class="col-lg-6 order-2 order-lg-1 content">
+        @endforeach --}}
+        <!-- Output Lulusan Item -->
+        <div class="col-12 col-lg-6 order-2 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+          @if ($outputLulusans->isNotEmpty())
+          @foreach ($outputLulusans as $item)
+            <a href="{{ route('output-lulusan-detail', $item->id) }}" class="position-relative text-decoration-none text-black services section">  
+                <div class="service-item position-relative d-flex flex-row text-decoration-none gap-3 mb-3 h-auto">
+                    <div class="row m-0 p-0">
+                        <div class="col-12 col-md-2 mb-3 mb-md-0 m-0 p-0">
+                            <div class="img-container">
+                                <img src="{{ Storage::url($item->image) }}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-9 d-flex align-items-center text-start m-0 p-0 ps-0 ps-md-3">
+                            <h3 class="title lh-sm m-0 p-0">{{ $item->title }}</h3>
+                            {{-- <p class="description m-0 p-0">{!! $item->description !!}</p> --}}
+                        </div>
+                    </div>
+                </div>
+            </a>
+          @endforeach
+          @else
+            <div class="col-6 order-2 mx-auto hero m-0" data-aos="fade-up" data-aos-delay="100">
+              <div class="featured-item position-relative text-decoration-none m-0 p-3">
+                  <p class="text-center mx-auto m-0 p-0">Belum ada Output Lulusan yang tersedia.</p>
+              </div>
+            </div>
+          @endif
+        </div>
+        <!-- End Output Lulusan Item -->
+        <div class="col-12 col-lg-6 order-1 content">
           <div class="container section-title" data-aos="fade-up">
             {{-- <h2>10 Alasan Mengapa Masuk Teknologi Rekayasa Perangkat Lunak</h2> --}}
           <h3>10 Alasan Mengapa Masuk Teknologi Rekayasa Perangkat Lunak</h3>
@@ -102,9 +129,7 @@
           <ul>
             @foreach ($alasan as $item)
             <li><i class="bi bi-check2-circle"></i><span>{{ $item->name }}</span></li>
-
             @endforeach
-
           </ul>
           {{-- <p>
             Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -112,9 +137,7 @@
           </p> --}}
         </div>
       </div>
-
     </div>
-
   </section><!-- /About Section -->
 
   <!-- Berita Section -->
@@ -124,11 +147,10 @@
     </div>
     <div class="container">
       <div class="row gy-4">
-        
         @if ($beritas->isNotEmpty())
           @foreach ($beritas as $berita)
               <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
-                  <a href="{{ route('beritaDetail', $berita->id) }}" class="position-relative text-decoration-none text-black">  
+                  <a href="{{ route('berita-detail', $berita->id) }}" class="position-relative text-decoration-none text-black">  
                       <div class="service-item position-relative text-decoration-none">
                           <div class="img-container mb-3">
                               <img src="{{ Storage::url($berita->image) }}" alt="">
@@ -136,7 +158,10 @@
                           {{-- <p class="description m-0 p-0">{{ $berita->title }}</p>
                           <p class="date lh-sm mt-3 m-0 p-0">{{ $berita->formatted_date }}</p> --}}
                           <h5 class="title fw-bold lh-sm mb-2 m-0 p-0">{{ $berita->title }}</h5>
-                          <p class="description m-0 p-0">{{ \Illuminate\Support\Str::limit(strip_tags($berita->description), 200) }}</p>
+                          <p class="description m-0 p-0">
+                            {!! \Illuminate\Support\Str::limit(strip_tags($berita->description, '<p><a><b><strong><i><u><em><br><ol><ul><li>'), 200) !!}
+                          </p>
+                        
                       </div>
                   </a>
               </div><!-- End Service Item -->
@@ -151,7 +176,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center w-100 mt-5">
-      <a href="{{ route('beritaLainnya') }}" class="text-center">
+      <a href="{{ route('berita-lainnya') }}" class="text-center">
         Berita Lainnya
         <i class="bi bi-arrow-right"></i>
       </a>
