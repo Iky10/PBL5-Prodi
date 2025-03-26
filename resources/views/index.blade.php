@@ -6,7 +6,7 @@
     <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <div class="carousel-item active">
-        <img src="assets/img/slider-1.png" alt="">
+        <img src="assets/img/slider-1.png" alt=""><!-- gambar benner -->
         <div class="carousel-container">
           {{-- <h2>Selamat Datang di Program Studi <span>Teknologi Rekayasa Perangkat Lunak</span></h2> --}}
           {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> --}}

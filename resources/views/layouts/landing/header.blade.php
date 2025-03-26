@@ -33,9 +33,12 @@
                 <li><a href="#">Akreditasi</a></li>
                 <li class="dropdown"><a href="#"><span>Fasilitas</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                   <ul>
-                    <li><a href="#">Lab Rekayasa Perangkat Lunak</a></li>
-                    <li><a href="#">Lab Jaringan Komputer</a></li>
-                    <li><a href="#">Lab Hardware</a></li>
+                    <li><a href="{{ route('lab.tanah_air') }}">Lab Tanah dan Air</a></li>
+                    <li><a href="{{ route('lab.persemaian') }}">Lab Persemaian</a></li>
+                    <li><a href="{{ route('lab.silfikutur') }}">Lab Silfikutur</a></li>
+                    <li><a href="{{ route('lab.konservasi') }}">lab Konservasi</a></li>
+                    <li><a href="{{ route('lab.sosial_ekonomi') }}">Lab Sosial Dan Ekonomi</a></li>
+                    <li><a href="{{ route('lab.perencanaan') }}">Lab Perencanaan</a></li>
                   </ul>
                 </li>
               </ul>

@@ -46,3 +46,10 @@ Route::post('/admin/output-lulusan/store', [AdminOutputLulusanController::class,
 Route::get('/admin/output-lulusan/edit/{id}', [AdminOutputLulusanController::class, 'edit'])->name('admin.output-lulusan.edit');
 Route::put('/admin/output-lulusan/update/{id}', [AdminOutputLulusanController::class, 'update'])->name('admin.output-lulusan.update');
 Route::delete('/admin/output-lulusan/delete/{id}', [AdminOutputLulusanController::class, 'delete'])->name('admin.output-lulusan.delete');
+
+Route::view('/lab-tanah-air', 'labs.tanah_dan_air')->name('lab.tanah_air');
+Route::view('/lab-konservasi', 'labs.konservasi')->name('lab.konservasi');
+Route::view('/lab-persemaian', 'labs.persemaian')->name('lab.persemaian');
+Route::view('/lab-silfikutur', 'labs.silfikutur')->name('lab.silfikutur');
+Route::view('/lab-perencanaan', 'labs.perencanaan')->name('lab.perencanaan');
+Route::view('/lab-sosial_ekonomi', 'labs.sosial_ekonomi')->name('lab.sosial_ekonomi');

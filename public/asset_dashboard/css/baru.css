@@ -1,0 +1,24 @@
+/* Animasi fade-in dari bawah */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk elemen saat masuk viewport */
+.animated {
+    opacity: 0; /* Awalnya disembunyikan */
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Saat elemen masuk ke viewport, animasi dijalankan */
+.animated.show {
+    opacity: 1;
+    transform: translateY(0);
+}
