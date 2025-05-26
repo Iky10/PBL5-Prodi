@@ -22,5 +22,8 @@
     <a class="sidebar-link" href="{{ route('admin.output-lulusan.index') }}">
         <i class="align-middle" data-feather="papers"></i> <span class="align-middle">Output Lulusan</span>
     </a>
+    <a class="sidebar-link" href="{{ route('admin.dosen.index') }}">
+        <i class="align-middle" data-feather="papers"></i> <span class="align-middle">Dosen & PLP</span>
+    </a>
 </li>
 

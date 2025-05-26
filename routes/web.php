@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\AlasanController;
 use App\Http\Controllers\Admin\AdminBeritaController;
 use App\Http\Controllers\Admin\AlasanBannerController;
 use App\Http\Controllers\Admin\AdminOutputLulusanController;
+use App\Http\Controllers\Admin\DosenController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -53,3 +54,10 @@ Route::view('/lab-persemaian', 'labs.persemaian')->name('lab.persemaian');
 Route::view('/lab-silfikutur', 'labs.silfikutur')->name('lab.silfikutur');
 Route::view('/lab-perencanaan', 'labs.perencanaan')->name('lab.perencanaan');
 Route::view('/lab-sosial_ekonomi', 'labs.sosial_ekonomi')->name('lab.sosial_ekonomi');
+
+Route::get('admin/dosen', [DosenController::class, 'index'])->name('admin.dosen.index');
+Route::get('admin/dosen/create', [DosenController::class, 'create'])->name('admin.dosen.create');
+Route::post('admin/dosen', [DosenController::class, 'store'])->name('admin.dosen.store');
+Route::get('admin/dosen/{id}/edit', [DosenController::class, 'edit'])->name('admin.dosen.edit');
+Route::put('admin/dosen/{id}', [DosenController::class, 'update'])->name('admin.dosen.update');
+Route::delete('admin/dosen/{id}', [DosenController::class, 'destroy'])->name('admin.dosen.destroy');

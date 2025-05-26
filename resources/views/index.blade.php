@@ -6,7 +6,8 @@
     <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <div class="carousel-item active">
-        <img src="assets/img/slider-1.png" alt=""><!-- gambar benner -->
+        <img src="assets/img/.png" alt="isi sendiri">
+        .png" alt=""><!-- gambar benner -->
         <div class="carousel-container">
           {{-- <h2>Selamat Datang di Program Studi <span>Teknologi Rekayasa Perangkat Lunak</span></h2> --}}
           {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> --}}
@@ -15,7 +16,7 @@
       </div><!-- End Carousel Item -->
 
       <div class="carousel-item">
-        <img src="assets/img/slider-2.png" alt="">
+        <img src="assets/img/.png" alt="isi sendiri">
         <div class="carousel-container">
           {{-- <h2>Jurusan <span>Rekayasa dan Komputer</span></h2>
           {{-- <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p> --}}
@@ -24,7 +25,7 @@
       </div><!-- End Carousel Item -->
 
       <div class="carousel-item">
-        <img src="assets/img/slider-3.png" alt="">
+        <img src="assets/img/.jpg" alt="isi sendiri">
         <div class="carousel-container">
           {{-- <h2>Politeknik Pertanian Negeri Samarinda</h2>
           {{-- <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p> --}}
@@ -120,7 +121,7 @@
         <div class="col-12 col-lg-6 order-1 content">
           <div class="container section-title" data-aos="fade-up">
             {{-- <h2>10 Alasan Mengapa Masuk Teknologi Rekayasa Perangkat Lunak</h2> --}}
-          <h3>10 Alasan Mengapa Masuk Teknologi Rekayasa Perangkat Lunak</h3>
+          <h3></h3>
           <div class="underline"></div>
           {{-- <p class="fst-italic">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -144,7 +145,7 @@
   <!-- Berita Section -->
   <section id="berita" class=" berita-section services section">
     <div class="container section-title" data-aos="fade-up">
-      <h2>Berita Utama</h2>
+      <h2>Teknologi Hasil Hutan</h2>
     </div>
     <div class="container">
       <div class="row gy-4">
@@ -168,17 +169,24 @@
               </div><!-- End Service Item -->
           @endforeach
         @else
-          <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative text-decoration-none">
-              <p class="text-center">Belum ada berita yang tersedia.</p>
-            </div>
+        <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="100">
+  <div class="service-item position-relative text-decoration-none">
+    <div class="service-item position-relative text-decoration-none">
+    <img 
+        src="assets/img/fotoTHP.jpg"
+        alt="Deskripsi Gambar"
+        width="100%"
+        height="300"
+        style="object-fit: cover;">
+</div>
+</div>
           </div>
         @endif
       </div>
     </div>
     <div class="d-flex justify-content-center w-100 mt-5">
       <a href="{{ route('berita-lainnya') }}" class="text-center">
-        Berita Lainnya
+        Selengkapnya Tentang Teknologi Pengelolaan Hutan
         <i class="bi bi-arrow-right"></i>
       </a>
     </div>
